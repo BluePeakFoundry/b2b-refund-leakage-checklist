@@ -9,8 +9,9 @@ from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent
 CANONICAL = "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/"
+FEEDBACK_URL = "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=feedback.yml"
 REQUIRED_LINKS = {
-    "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues",
+    FEEDBACK_URL,
     "https://bluepeakfoundry.github.io/consumer-rights-tools/",
 }
 PROHIBITED_TERMS = [
@@ -118,6 +119,28 @@ def validate_robots_sitemap():
         fail("sitemap missing canonical URL")
 
 
+def validate_feedback_template():
+    path = ROOT / ".github" / "ISSUE_TEMPLATE" / "feedback.yml"
+    if not path.exists():
+        fail("missing feedback issue template")
+    text = path.read_text(encoding="utf-8")
+    required_phrases = [
+        "No confidential data",
+        "No personal data",
+        "No client names",
+        "No vendor names",
+        "No invoice numbers",
+        "No account IDs",
+        "No contract text",
+    ]
+    lowered = text.lower()
+    missing = [phrase for phrase in required_phrases if phrase.lower() not in lowered]
+    if missing:
+        fail(f"feedback template missing safety phrases: {missing}")
+    if "contact_links" in lowered:
+        fail("feedback template must not add external contact links")
+
+
 def validate_manifest():
     data = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
     if data.get("money_verified_eur") != 0:
@@ -127,7 +150,7 @@ def validate_manifest():
     if data.get("public_url") != CANONICAL:
         fail("manifest public_url mismatch")
     files = {entry["path"]: entry for entry in data.get("files", [])}
-    required = {"index.html", "style.css", "robots.txt", "sitemap.xml", "README.md", "validate_public_site.py", "manifest.json"}
+    required = {"index.html", "style.css", "robots.txt", "sitemap.xml", "README.md", "validate_public_site.py", "manifest.json", ".github/ISSUE_TEMPLATE/feedback.yml"}
     if not required.issubset(files):
         fail(f"manifest missing files: {sorted(required - set(files))}")
     for rel, entry in files.items():
@@ -139,6 +162,7 @@ def validate_manifest():
 def main():
     validate_html()
     validate_robots_sitemap()
+    validate_feedback_template()
     validate_manifest()
     data = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
     print(f"OK b2b refund leakage checklist files={len(data.get('files', []))} money_verified_eur={data['money_verified_eur']} external_actions={len(data['external_actions_performed'])}")

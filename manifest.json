@@ -12,22 +12,22 @@
     "no_tracking",
     "no_server_submission"
   ],
-  "demand_action_goal": "Publish a public, crawlable, cost-zero landing page and link it from an existing Blue Peak Foundry index.",
+  "demand_action_goal": "Maintain a public, crawlable, cost-zero landing page and add a GitHub Issues feedback channel for generalized workflow feedback without confidential data.",
   "files": [
     {
       "path": "README.md",
-      "bytes": 794,
-      "sha256": "4e253dbdf7ccaceea20dc0e69d5f9e3db54b07061de1c249895bc7d6d0abafe0"
+      "bytes": 1115,
+      "sha256": "82db9a93b2ad4d16881ce818319d8a3786ae50bae6d2661a7bb3c0f93bd4209d"
     },
     {
       "path": "index.html",
-      "bytes": 7069,
-      "sha256": "b4e405dfdadd08e0b05fbbfe5615d2693f59f147857c4268302f4865cd68c310"
+      "bytes": 7402,
+      "sha256": "b0f222b7704dc0629853f8de0c7eeeb8441b17e1467980d4d5fc291c11d73e37"
     },
     {
       "path": "manifest.json",
-      "bytes": 1771,
-      "sha256": "d7b3508162b864d7400fa66791e0117defa96eded94f14f892d4e2269d538089"
+      "bytes": 1924,
+      "sha256": "c7835f66ef2e433649964cdf642cef21ddd6f5289bd495a1a35b3d56b31b966a"
     },
     {
       "path": "robots.txt",
@@ -51,8 +51,13 @@
     },
     {
       "path": "validate_public_site.py",
-      "bytes": 5472,
-      "sha256": "aa0f2a1e241af2a6bb84f8419494e16f21dbbe3b5185f47f3880f953a73abc0e"
+      "bytes": 6349,
+      "sha256": "48aafd83eaf9177ee18d132c6dc5d791bb5e8d27d908c5d2bbc620c04d451e59"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feedback.yml",
+      "bytes": 1411,
+      "sha256": "7b5383c5a64cd1219da121a67b01f72e94d1d61ccda7382d7cc41efa976d4ced"
     }
   ]
 }

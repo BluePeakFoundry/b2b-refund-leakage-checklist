@@ -1,0 +1,35 @@
+name: Feedback on the checklist
+description: Share non-confidential feedback about the B2B refund leakage checklist.
+title: "Feedback: "
+labels:
+  - feedback
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the checklist.
+
+        No confidential data. No personal data. No client names. No vendor names. No invoice numbers. No account IDs. No contract text. Share only generalized workflow feedback or a sanitized example.
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Which workflow were you reviewing?
+      description: Keep this general, for example vendor renewals, duplicate charges, unused credits, or seat-count reviews.
+      placeholder: "Example: quarterly review of unused vendor credits"
+    validations:
+      required: true
+  - type: textarea
+    id: useful
+    attributes:
+      label: What was useful or missing?
+      description: Please describe the checklist step, wording, or missing category that would make the page more useful.
+      placeholder: "Example: a clearer check for cancellation confirmation dates would help."
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I have not included confidential data, personal data, client names, vendor names, invoice numbers, account IDs, or contract text.
+          required: true
