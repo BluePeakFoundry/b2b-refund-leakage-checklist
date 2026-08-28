@@ -1,0 +1,58 @@
+{
+  "name": "B2B Refund Leakage Checklist",
+  "public_url": "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/",
+  "repository": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist",
+  "created_at": "2026-08-28T00:25:38Z",
+  "money_verified_eur": 0,
+  "external_actions_performed": [],
+  "privacy_model": [
+    "static_site",
+    "no_forms",
+    "no_analytics",
+    "no_tracking",
+    "no_server_submission"
+  ],
+  "demand_action_goal": "Publish a public, crawlable, cost-zero landing page and link it from an existing Blue Peak Foundry index.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 794,
+      "sha256": "4e253dbdf7ccaceea20dc0e69d5f9e3db54b07061de1c249895bc7d6d0abafe0"
+    },
+    {
+      "path": "index.html",
+      "bytes": 7069,
+      "sha256": "b4e405dfdadd08e0b05fbbfe5615d2693f59f147857c4268302f4865cd68c310"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 1771,
+      "sha256": "d7b3508162b864d7400fa66791e0117defa96eded94f14f892d4e2269d538089"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 107,
+      "sha256": "f0b9ca76bba8ff23fdd2b8cd43c95fb03d8d01656f35e9861414b2af461a6a04"
+    },
+    {
+      "path": "sitemap.xml",
+      "bytes": 206,
+      "sha256": "de754ade5712b1cddfb6c6c5b3e468e6c2a649fafdd89dfe6a572c51a8a8b764"
+    },
+    {
+      "path": "source_checks.json",
+      "bytes": 1293,
+      "sha256": "f68fac010de2069c63c9add0015bfaf6bf670c602d3fe2b518519bd75c7f211c"
+    },
+    {
+      "path": "style.css",
+      "bytes": 2393,
+      "sha256": "8d4a2086bfac92e79133b94f542587d0fd75055c7d8cbe826a449f5a21566d2a"
+    },
+    {
+      "path": "validate_public_site.py",
+      "bytes": 5472,
+      "sha256": "aa0f2a1e241af2a6bb84f8419494e16f21dbbe3b5185f47f3880f953a73abc0e"
+    }
+  ]
+}

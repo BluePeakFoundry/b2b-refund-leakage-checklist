@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-08-28T00:25:38Z",
+  "sources": [
+    {
+      "name": "GitHub Pages docs",
+      "url": "https://docs.github.com/en/pages",
+      "status": 200
+    },
+    {
+      "name": "GitHub REST Pages API docs",
+      "url": "https://docs.github.com/en/rest/pages/pages",
+      "status": 200
+    },
+    {
+      "name": "Google SEO Starter Guide",
+      "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "status": 200
+    },
+    {
+      "name": "Google crawlable links guidance",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/links-crawlable",
+      "status": 200
+    },
+    {
+      "name": "HN Algolia public API",
+      "url": "https://hn.algolia.com/api",
+      "status": 200
+    },
+    {
+      "name": "Stack Exchange API docs",
+      "url": "https://api.stackexchange.com/docs",
+      "status": 200
+    },
+    {
+      "name": "Blue Peak Foundry consumer rights index",
+      "url": "https://bluepeakfoundry.github.io/consumer-rights-tools/",
+      "status": 200
+    }
+  ],
+  "prior_signal": {
+    "source": "artifacts/public_demand_signal_scanner/live_demand_report.json",
+    "top_hypothesis": "b2b_refund_audit_service",
+    "weighted_score": 66,
+    "verdict": "explorar",
+    "money_verified_eur": 0
+  }
+}

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>B2B Refund Leakage Checklist | Blue Peak Foundry</title>
+  <meta name="description" content="A private-by-design checklist for spotting recoverable B2B billing issues, duplicate charges, unused credits, and renewal leakage.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/">
+  <meta property="og:title" content="B2B Refund Leakage Checklist">
+  <meta property="og:description" content="Review common vendor billing and refund leakage points before deciding what to verify with your own records.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "B2B Refund Leakage Checklist",
+        "url": "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/",
+        "description": "A static checklist for reviewing common B2B refund and billing leakage situations."
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to run a lightweight refund leakage review",
+        "description": "A non-legal, non-financial checklist for organizing an internal review of vendor invoices, renewals, credits, and cancellation windows.",
+        "step": [
+          {"@type": "HowToStep", "name": "Collect records", "text": "Export or gather vendor invoices, subscription renewals, credit memos, cancellation confirmations, and payment entries for the period you want to review."},
+          {"@type": "HowToStep", "name": "Mark high-signal issues", "text": "Look for duplicate invoice numbers, same-day repeat charges, unused account credits, service downgrades not reflected in billing, and renewals that conflict with cancellation records."},
+          {"@type": "HowToStep", "name": "Verify before contacting vendors", "text": "Check contract terms, official vendor statements, and local requirements before sending any request."}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Does this page collect invoice data?", "acceptedAnswer": {"@type": "Answer", "text": "No. The page is static and does not include forms, analytics, tracking scripts, or server submission."}},
+          {"@type": "Question", "name": "Is this legal or accounting advice?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is a checklist for organizing an internal review. Always verify obligations and rights with official documents or qualified professionals."}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#checklist">Skip to checklist</a>
+  <header class="hero">
+    <p class="eyebrow">Blue Peak Foundry</p>
+    <h1>B2B refund leakage checklist</h1>
+    <p class="lead">A simple starting point for finance and operations teams reviewing whether vendor billing contains recoverable mistakes or unused credits.</p>
+    <div class="hero-actions" aria-label="Primary actions">
+      <a class="button" href="#checklist">Use the checklist</a>
+      <a class="button secondary" href="https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues">Share public feedback</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="notice" aria-labelledby="privacy-title">
+      <h2 id="privacy-title">Private by design</h2>
+      <p>This page does not ask for accounts, does not include a form, does not store files, and does not send your entries anywhere. Do the review in your own internal systems.</p>
+    </section>
+
+    <section id="checklist" class="grid" aria-labelledby="checklist-title">
+      <div class="section-heading">
+        <p class="tag">Checklist</p>
+        <h2 id="checklist-title">High-signal areas to review</h2>
+      </div>
+      <article class="card">
+        <h3>Duplicate or near-duplicate charges</h3>
+        <ul>
+          <li>Same vendor, amount, and date charged more than once.</li>
+          <li>Invoice number reused across separate payment entries.</li>
+          <li>Card payment and bank transfer both recorded for the same invoice.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Unused credits and credit memos</h3>
+        <ul>
+          <li>Credit notes issued but not matched against later invoices.</li>
+          <li>Prepaid balances left after account closure or downgrade.</li>
+          <li>Service-level credits promised after incidents but never applied.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Renewal and cancellation mismatch</h3>
+        <ul>
+          <li>Renewal occurred after a documented cancellation request.</li>
+          <li>Annual plan renewed while internal owner had left or project ended.</li>
+          <li>Auto-renewal price differs from the signed quote or public order form.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Scope, seats, and downgrade gaps</h3>
+        <ul>
+          <li>Paid seats exceed active users for several billing periods.</li>
+          <li>Downgrade or feature removal did not reduce the invoice.</li>
+          <li>Tax, shipping, or processing fees duplicated across revised invoices.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="process" aria-labelledby="process-title">
+      <p class="tag">Process</p>
+      <h2 id="process-title">A lightweight review workflow</h2>
+      <ol>
+        <li>Pick a bounded period, such as the last quarter or last renewal window.</li>
+        <li>Group vendor records by supplier, account owner, invoice number, amount, and payment date.</li>
+        <li>Flag only issues with documentary support; avoid assumptions about entitlement.</li>
+        <li>Verify contract terms and official vendor billing rules before making a request.</li>
+        <li>Send concise, factual messages with invoice references and requested correction.</li>
+      </ol>
+    </section>
+
+    <section class="limits" aria-labelledby="limits-title">
+      <h2 id="limits-title">Important limits</h2>
+      <ul>
+        <li>This checklist is educational and operational, not legal, tax, accounting, or financial advice.</li>
+        <li>Refund rights and vendor obligations depend on contracts, jurisdictions, tax treatment, and the facts of each account.</li>
+        <li>No refund, saving, recovery, or outcome is guaranteed.</li>
+      </ul>
+      <p><a href="https://bluepeakfoundry.github.io/consumer-rights-tools/">See more Blue Peak Foundry refund tools</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Blue Peak Foundry publishes lightweight tools for practical review workflows. No tracking scripts are used on this page.</p>
+  </footer>
+</body>
+</html>

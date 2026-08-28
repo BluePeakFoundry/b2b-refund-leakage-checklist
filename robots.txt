@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/sitemap.xml
