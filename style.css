@@ -61,13 +61,13 @@ h3 { margin-top: 0; font-size: 1.15rem; }
 }
 .button.secondary { background: var(--soft); color: var(--accent-dark); border: 1px solid #c9dcff; }
 main { max-width: 980px; margin: 0 auto; padding: 0 1.25rem 4rem; }
-.notice, .process, .limits, .card {
+.notice, .process, .downloads, .limits, .card {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 1.2rem;
   box-shadow: 0 18px 50px rgba(31, 47, 84, .07);
 }
-.notice, .process, .limits { padding: 1.4rem; margin: 1rem 0; }
+.notice, .process, .downloads, .limits { padding: 1.4rem; margin: 1rem 0; }
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

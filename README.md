@@ -16,6 +16,15 @@ General workflow feedback is welcome through the public GitHub issue template: h
 
 Do not share confidential data, personal data, client names, vendor names, invoice numbers, account IDs, or contract text.
 
+## Downloadable helpers
+
+- `downloads/refund-leakage-review.csv` — a plain CSV review sheet for internal checks.
+- `downloads/vendor-message-template.md` — a neutral vendor billing correction message template.
+
+## Repository traffic snapshots
+
+The workflow `.github/workflows/traffic-snapshot.yml` can be run manually or on its daily schedule to store repository-level GitHub Traffic API snapshots under `metrics/github-traffic/`. These snapshots do not measure GitHub Pages visitors and do not identify users.
+
 ## Validation
 
 Run:
@@ -28,5 +37,5 @@ python3 -m json.tool manifest.json >/dev/null
 Expected local result after building the manifest:
 
 ```text
-OK b2b refund leakage checklist files=7 money_verified_eur=0 external_actions=0
+OK b2b refund leakage checklist files=12 money_verified_eur=0 external_actions=0
 ```

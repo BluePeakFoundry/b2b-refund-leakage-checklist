@@ -12,22 +12,22 @@
     "no_tracking",
     "no_server_submission"
   ],
-  "demand_action_goal": "Maintain a public, crawlable, cost-zero landing page and add a GitHub Issues feedback channel for generalized workflow feedback without confidential data.",
+  "demand_action_goal": "Maintain a public, crawlable, cost-zero landing page with safe feedback, downloadable review helpers, and repository-level GitHub Traffic snapshots.",
   "files": [
     {
       "path": "README.md",
-      "bytes": 1115,
-      "sha256": "82db9a93b2ad4d16881ce818319d8a3786ae50bae6d2661a7bb3c0f93bd4209d"
+      "bytes": 1632,
+      "sha256": "178a1cd698eab4739928d19c72a4f55e6332c596e1a423ed6f7a3289704e3374"
     },
     {
       "path": "index.html",
-      "bytes": 7402,
-      "sha256": "b0f222b7704dc0629853f8de0c7eeeb8441b17e1467980d4d5fc291c11d73e37"
+      "bytes": 8197,
+      "sha256": "695565f0ea0117eedad1ef81aede4e147e7c7b2431fa70c4c865c0bf03d3afa9"
     },
     {
       "path": "manifest.json",
-      "bytes": 1924,
-      "sha256": "c7835f66ef2e433649964cdf642cef21ddd6f5289bd495a1a35b3d56b31b966a"
+      "bytes": 0,
+      "sha256": "self-referential-skipped-by-validator"
     },
     {
       "path": "robots.txt",
@@ -46,18 +46,34 @@
     },
     {
       "path": "style.css",
-      "bytes": 2393,
-      "sha256": "8d4a2086bfac92e79133b94f542587d0fd75055c7d8cbe826a449f5a21566d2a"
+      "bytes": 2417,
+      "sha256": "577a64aa4265f8f952ff337eb88e8a77b9ce65c12880b8141e1819b56536a69d"
     },
     {
       "path": "validate_public_site.py",
-      "bytes": 6349,
-      "sha256": "48aafd83eaf9177ee18d132c6dc5d791bb5e8d27d908c5d2bbc620c04d451e59"
+      "bytes": 7456,
+      "sha256": "e04132b209776f49c8267ef1e887bff0cbeaa75c6a27fe477de6dba99f0ccc81"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feedback.yml",
       "bytes": 1411,
       "sha256": "7b5383c5a64cd1219da121a67b01f72e94d1d61ccda7382d7cc41efa976d4ced"
+    },
+    {
+      "path": ".github/workflows/traffic-snapshot.yml",
+      "bytes": 2396,
+      "sha256": "f8193a1d4555bc02ed824f4146694eefe08cda9b8e4e20234c369497efe271a2"
+    },
+    {
+      "path": "downloads/refund-leakage-review.csv",
+      "bytes": 1297,
+      "sha256": "c6e701f52f3128acb041e5284bc9a359ed2ad2e6dc6ae947b5c9845051e14159"
+    },
+    {
+      "path": "downloads/vendor-message-template.md",
+      "bytes": 1161,
+      "sha256": "c2b9a60664393961ed4cb6678fd2239c17f604aabad1f1e89aa3aed1b4eb6d6e"
     }
-  ]
+  ],
+  "updated_at": "2026-08-29T17:38:44Z"
 }

@@ -1,0 +1,6 @@
+area,review_prompt,evidence_to_check,avoid_sharing_publicly
+Duplicate or near-duplicate charges,"Look for the same vendor, amount, invoice number, and payment date appearing more than once.","Invoice export, payment ledger, card statement, revised invoice notes","Client names, vendor names, invoice numbers, account IDs, contract text"
+Unused credits and credit memos,"List credits, refunds, or service credits that were issued but not matched to later invoices.","Credit memos, incident service credit notices, account balance screens","Confidential credits, account balances, internal owner names"
+Renewal and cancellation mismatch,"Compare cancellation or downgrade records against later renewal charges.","Cancellation confirmation, renewal notice, signed quote, order form","Contract text, account IDs, employee names"
+Scope seats and downgrade gaps,"Compare billed seats, modules, and service tiers against active use and approved changes.","Seat export, admin console counts, approved downgrade request","User lists, personal data, internal access logs"
+Tax fee and adjustment duplication,"Check whether revised invoices duplicated taxes, shipping, processing fees, or manual adjustments.","Original invoice, corrected invoice, tax or fee line items","Tax IDs, bank data, invoice numbers"

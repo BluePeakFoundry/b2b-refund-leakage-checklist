@@ -1,0 +1,61 @@
+name: Repository traffic snapshot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Collect GitHub repository traffic
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          mkdir -p metrics/github-traffic
+          stamp="$(date -u +%Y%m%dT%H%M%SZ)"
+          out="metrics/github-traffic/${stamp}.json"
+          gh api "repos/${GH_REPO}/traffic/views" > /tmp/views.json
+          gh api "repos/${GH_REPO}/traffic/clones" > /tmp/clones.json
+          gh api "repos/${GH_REPO}/traffic/popular/paths" > /tmp/paths.json
+          gh api "repos/${GH_REPO}/traffic/popular/referrers" > /tmp/referrers.json
+          STAMP="$stamp" OUT="$out" python3 - <<'PY'
+          import json, os
+          payload = {
+              "repository": os.environ["GH_REPO"],
+              "captured_at": os.environ["STAMP"],
+              "scope_note": "GitHub Traffic API covers repository views, clones, paths, and referrers. It does not measure GitHub Pages visitors or identify users.",
+              "views": json.load(open('/tmp/views.json')),
+              "clones": json.load(open('/tmp/clones.json')),
+              "popular_paths": json.load(open('/tmp/paths.json')),
+              "popular_referrers": json.load(open('/tmp/referrers.json')),
+          }
+          out = os.environ["OUT"]
+          with open(out, 'w', encoding='utf-8') as fh:
+              json.dump(payload, fh, indent=2)
+              fh.write('\n')
+          latest = 'metrics/github-traffic/latest.json'
+          with open(latest, 'w', encoding='utf-8') as fh:
+              json.dump(payload, fh, indent=2)
+              fh.write('\n')
+          PY
+      - name: Commit snapshot if changed
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- metrics/github-traffic; then
+            echo "No traffic snapshot changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add metrics/github-traffic
+          git commit -m "chore: update repository traffic snapshot"
+          git push

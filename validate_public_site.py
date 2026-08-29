@@ -13,6 +13,8 @@ FEEDBACK_URL = "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/
 REQUIRED_LINKS = {
     FEEDBACK_URL,
     "https://bluepeakfoundry.github.io/consumer-rights-tools/",
+    "downloads/refund-leakage-review.csv",
+    "downloads/vendor-message-template.md",
 }
 PROHIBITED_TERMS = [
     r"\bsergi\b",
@@ -141,6 +143,21 @@ def validate_feedback_template():
         fail("feedback template must not add external contact links")
 
 
+def validate_downloads():
+    csv_path = ROOT / "downloads" / "refund-leakage-review.csv"
+    template_path = ROOT / "downloads" / "vendor-message-template.md"
+    if not csv_path.exists() or not template_path.exists():
+        fail("missing downloadable helper files")
+    csv_text = csv_path.read_text(encoding="utf-8")
+    if "avoid_sharing_publicly" not in csv_text or "invoice numbers" not in csv_text:
+        fail("CSV helper missing privacy guidance")
+    template_text = template_path.read_text(encoding="utf-8")
+    required = ["Billing review request", "safest official channel", "Do not post confidential data"]
+    missing = [phrase for phrase in required if phrase not in template_text]
+    if missing:
+        fail(f"vendor template missing phrases: {missing}")
+
+
 def validate_manifest():
     data = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
     if data.get("money_verified_eur") != 0:
@@ -150,7 +167,19 @@ def validate_manifest():
     if data.get("public_url") != CANONICAL:
         fail("manifest public_url mismatch")
     files = {entry["path"]: entry for entry in data.get("files", [])}
-    required = {"index.html", "style.css", "robots.txt", "sitemap.xml", "README.md", "validate_public_site.py", "manifest.json", ".github/ISSUE_TEMPLATE/feedback.yml"}
+    required = {
+        "index.html",
+        "style.css",
+        "robots.txt",
+        "sitemap.xml",
+        "README.md",
+        "validate_public_site.py",
+        "manifest.json",
+        ".github/ISSUE_TEMPLATE/feedback.yml",
+        ".github/workflows/traffic-snapshot.yml",
+        "downloads/refund-leakage-review.csv",
+        "downloads/vendor-message-template.md",
+    }
     if not required.issubset(files):
         fail(f"manifest missing files: {sorted(required - set(files))}")
     for rel, entry in files.items():
@@ -163,6 +192,7 @@ def main():
     validate_html()
     validate_robots_sitemap()
     validate_feedback_template()
+    validate_downloads()
     validate_manifest()
     data = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
     print(f"OK b2b refund leakage checklist files={len(data.get('files', []))} money_verified_eur={data['money_verified_eur']} external_actions={len(data['external_actions_performed'])}")
