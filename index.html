@@ -36,13 +36,15 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type": "Question", "name": "Does this page collect invoice data?", "acceptedAnswer": {"@type": "Answer", "text": "No. The page is static and does not include forms, analytics, tracking scripts, or server submission."}},
+          {"@type": "Question", "name": "Does this page collect invoice data?", "acceptedAnswer": {"@type": "Answer", "text": "No. The page is static and does not include forms, cookies, or server submission of your entries; usage is measured only in aggregate."}},
           {"@type": "Question", "name": "Is this legal or accounting advice?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is a checklist for organizing an internal review. Always verify obligations and rights with official documents or qualified professionals."}}
         ]
       }
     ]
   }
   </script>
+  <script data-goatcounter="https://bluepeakfoundry.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <script defer src="analytics.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#checklist">Skip to checklist</a>
@@ -51,16 +53,16 @@
     <h1>B2B refund leakage checklist</h1>
     <p class="lead">A simple starting point for finance and operations teams reviewing whether vendor billing contains recoverable mistakes or unused credits.</p>
     <div class="hero-actions" aria-label="Primary actions">
-      <a class="button" href="#checklist">Use the checklist</a>
-      <a class="button secondary" href="downloads/refund-leakage-review.csv">Download CSV review sheet</a>
-      <a class="button secondary" href="https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=feedback.yml">Share public feedback</a>
+      <a class="button" href="#checklist" data-analytics-event="cta:b2b:use-checklist" data-analytics-title="B2B use checklist CTA">Use the checklist</a>
+      <a class="button secondary" href="downloads/refund-leakage-review.csv" data-analytics-event="download:b2b:csv-review-sheet" data-analytics-title="B2B CSV review sheet download">Download CSV review sheet</a>
+      <a class="button secondary" href="https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=feedback.yml" data-analytics-event="lead:b2b:public-feedback" data-analytics-title="B2B public feedback lead">Share public feedback</a>
     </div>
   </header>
 
   <main>
     <section class="notice" aria-labelledby="privacy-title">
       <h2 id="privacy-title">Private by design</h2>
-      <p>This page does not ask for accounts, does not include a form, does not store files, and does not send your entries anywhere. Do the review in your own internal systems.</p>
+      <p>This page does not ask for accounts, does not include a data-entry form, does not store files, and does not send your entries anywhere. Do the review in your own internal systems.</p>
     </section>
 
     <section id="checklist" class="grid" aria-labelledby="checklist-title">
@@ -119,8 +121,8 @@
       <h2 id="downloads-title">Run the review without sending data anywhere</h2>
       <p>Use these small, editable files inside your own systems. They are plain-text resources and do not transmit information.</p>
       <ul>
-        <li><a href="downloads/refund-leakage-review.csv">CSV review sheet</a> for tracking issue categories, evidence to check, and public-sharing limits.</li>
-        <li><a href="downloads/vendor-message-template.md">Vendor message template</a> for a concise billing correction request after internal verification.</li>
+        <li><a href="downloads/refund-leakage-review.csv" data-analytics-event="download:b2b:csv-review-sheet-inline" data-analytics-title="B2B inline CSV download">CSV review sheet</a> for tracking issue categories, evidence to check, and public-sharing limits.</li>
+        <li><a href="downloads/vendor-message-template.md" data-analytics-event="download:b2b:vendor-template" data-analytics-title="B2B vendor template download">Vendor message template</a> for a concise billing correction request after internal verification.</li>
       </ul>
     </section>
 
@@ -131,13 +133,13 @@
         <li>Refund rights and vendor obligations depend on contracts, jurisdictions, tax treatment, and the facts of each account.</li>
         <li>No refund, saving, recovery, or outcome is guaranteed.</li>
       </ul>
-      <p><a href="https://bluepeakfoundry.github.io/consumer-rights-tools/">See more Blue Peak Foundry refund tools</a></p>
-      <p><a href="https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=feedback.yml">Share public feedback</a> only with generalized workflow notes. Do not share confidential data, personal data, client names, vendor names, invoice numbers, account IDs, or contract text.</p>
+      <p><a href="https://bluepeakfoundry.github.io/consumer-rights-tools/" data-analytics-event="outbound:b2b:consumer-rights-tools" data-analytics-title="B2B outbound to tools index">See more Blue Peak Foundry refund tools</a></p>
+      <p><a href="https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=feedback.yml" data-analytics-event="feedback:b2b:public-issue" data-analytics-title="B2B feedback issue link">Share public feedback</a> only with generalized workflow notes. Do not share confidential data, personal data, client names, vendor names, invoice numbers, account IDs, or contract text.</p>
     </section>
   </main>
 
   <footer>
-    <p>Blue Peak Foundry publishes lightweight tools for practical review workflows. No tracking scripts are used on this page.</p>
+    <p>Blue Peak Foundry publishes lightweight tools for practical review workflows. Privacy-friendly analytics is used without cookies, accounts, or form submissions.</p>
   </footer>
 </body>
 </html>

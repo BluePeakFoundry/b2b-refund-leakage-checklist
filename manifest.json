@@ -16,17 +16,17 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 1773,
-      "sha256": "796e488f4c97775476eae3a9eda399267158b194e78e5db96d577d0d252fcee6"
+      "bytes": 1880,
+      "sha256": "9a79fbd158bc7f0f0d31201ebfabedf6204ca13d63dd59541f7f505d7a363c82"
     },
     {
       "path": "index.html",
-      "bytes": 8197,
-      "sha256": "695565f0ea0117eedad1ef81aede4e147e7c7b2431fa70c4c865c0bf03d3afa9"
+      "bytes": 9158,
+      "sha256": "c62cf8ee19731358b12160833e62eecab43b79d14212b17f8862cbb459d9be61"
     },
     {
       "path": "manifest.json",
-      "bytes": 0,
+      "bytes": 2656,
       "sha256": "self-referential-skipped-by-validator"
     },
     {
@@ -51,8 +51,8 @@
     },
     {
       "path": "validate_public_site.py",
-      "bytes": 7456,
-      "sha256": "e04132b209776f49c8267ef1e887bff0cbeaa75c6a27fe477de6dba99f0ccc81"
+      "bytes": 7832,
+      "sha256": "6025a4de67602f452c6d24e0a7d504f5283faa0a021f25efbc866da1853cdba5"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feedback.yml",
@@ -73,7 +73,13 @@
       "path": "downloads/vendor-message-template.md",
       "bytes": 1161,
       "sha256": "c2b9a60664393961ed4cb6678fd2239c17f604aabad1f1e89aa3aed1b4eb6d6e"
+    },
+    {
+      "path": "analytics.js",
+      "sha256": "5d70b146cf7cccb7fe0060ff70c72b6a80429efff2b8d7dd135af3c1c3dcfc39",
+      "bytes": 1115
     }
   ],
-  "updated_at": "2026-08-29T17:38:44Z"
+  "updated_at": "2026-08-29T17:38:44Z",
+  "updated_utc": "2026-08-29T18:01:46Z"
 }

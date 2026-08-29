@@ -84,10 +84,14 @@ def validate_html():
     for term in PROHIBITED_TERMS:
         if re.search(term, lowered):
             fail(f"prohibited public language: {term}")
-    if REMOTE_RUNTIME_RE.search(text):
+    remote_runtime_text = re.sub(r"<script[^>]+src=['\"]https://gc\.zgo\.at/count\.js['\"][^>]*></script>", "", text, flags=re.I)
+    if REMOTE_RUNTIME_RE.search(remote_runtime_text):
         fail("remote runtime resource detected")
     if FORM_OR_TRACKING_RE.search(text):
-        fail("form or tracking marker detected")
+        fail("forbidden form or invasive tracking marker detected")
+    for marker in ["bluepeakfoundry.goatcounter.com/count", "analytics.js", "data-analytics-event"]:
+        if marker not in text:
+            fail(f"missing analytics marker: {marker}")
     parser = Parser()
     parser.feed(text)
     if parser.canonical != CANONICAL:
@@ -177,6 +181,7 @@ def validate_manifest():
         "manifest.json",
         ".github/ISSUE_TEMPLATE/feedback.yml",
         ".github/workflows/traffic-snapshot.yml",
+        "analytics.js",
         "downloads/refund-leakage-review.csv",
         "downloads/vendor-message-template.md",
     }

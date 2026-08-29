@@ -8,7 +8,7 @@ The page helps finance and operations teams organize an internal review of dupli
 
 ## Privacy
 
-This site is static. It does not include forms, analytics, tracking scripts, cookies, or remote runtime resources.
+This site is static. It does not include data-entry forms, cookies, account requirements, or server submission of entries. Privacy-friendly aggregate analytics measure visits and non-personal CTA/download/feedback events.
 
 ## Public feedback
 
