@@ -61,8 +61,8 @@
     },
     {
       "path": ".github/workflows/traffic-snapshot.yml",
-      "bytes": 4946,
-      "sha256": "590348ee510637ae180b85f6211d0f62d1390a1c5bdf73237ac40cdfb8f335b8"
+      "bytes": 4964,
+      "sha256": "ba40d4ef0f11b8910bb6310a2e7b7bce0119b55801ee290140d542cbb1a34d50"
     },
     {
       "path": "downloads/refund-leakage-review.csv",

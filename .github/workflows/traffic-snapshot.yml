@@ -94,7 +94,7 @@ jobs:
       - name: Commit snapshot if changed
         run: |
           set -euo pipefail
-          if git diff --quiet -- metrics/repository-signals; then
+          if [ -z "$(git status --porcelain -- metrics/repository-signals)" ]; then
             echo "No signal snapshot changes to commit."
             exit 0
           fi
