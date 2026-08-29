@@ -1,4 +1,4 @@
-name: Repository traffic snapshot
+name: Repository signal snapshot
 
 on:
   workflow_dispatch:
@@ -14,48 +14,92 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-      - name: Collect GitHub repository traffic
+      - name: Collect public site and repository signals
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
+          SITE_URL: https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/
         run: |
           set -euo pipefail
-          mkdir -p metrics/github-traffic
+          mkdir -p metrics/repository-signals
           stamp="$(date -u +%Y%m%dT%H%M%SZ)"
-          out="metrics/github-traffic/${stamp}.json"
-          gh api "repos/${GH_REPO}/traffic/views" > /tmp/views.json
-          gh api "repos/${GH_REPO}/traffic/clones" > /tmp/clones.json
-          gh api "repos/${GH_REPO}/traffic/popular/paths" > /tmp/paths.json
-          gh api "repos/${GH_REPO}/traffic/popular/referrers" > /tmp/referrers.json
-          STAMP="$stamp" OUT="$out" python3 - <<'PY'
+          out="metrics/repository-signals/${stamp}.json"
+          collect_api() {
+            local endpoint="$1"
+            local target="$2"
+            if gh api "$endpoint" > "$target" 2>"${target}.err"; then
+              python3 - "$target" "${target}.err" <<'PY'
+          import json, sys
+          path, err = sys.argv[1], sys.argv[2]
+          print(json.dumps({"ok": True, "data": json.load(open(path)), "error": open(err).read().strip()}))
+          PY
+            else
+              python3 - "$target" "${target}.err" <<'PY'
+          import json, sys
+          path, err = sys.argv[1], sys.argv[2]
+          print(json.dumps({"ok": False, "data": None, "error": open(err).read().strip()}))
+          PY
+            fi
+          }
+          collect_url() {
+            local url="$1"
+            python3 - "$url" <<'PY'
+          import json, sys, urllib.request
+          url = sys.argv[1]
+          try:
+              req = urllib.request.Request(url, headers={"User-Agent": "BluePeakFoundry-signal-snapshot/1.0"})
+              with urllib.request.urlopen(req, timeout=20) as response:
+                  body = response.read().decode("utf-8", "replace")
+              print(json.dumps({"ok": True, "url": url, "status": response.status, "bytes": len(body), "has_feedback_cta": "issues/new?template=feedback.yml" in body, "has_download_cta": "downloads/refund-leakage-review.csv" in body}))
+          except Exception as exc:
+              print(json.dumps({"ok": False, "url": url, "error": repr(exc)}))
+          PY
+          }
+          views_json="$(collect_api "repos/${GH_REPO}/traffic/views" /tmp/views.json)"
+          clones_json="$(collect_api "repos/${GH_REPO}/traffic/clones" /tmp/clones.json)"
+          paths_json="$(collect_api "repos/${GH_REPO}/traffic/popular/paths" /tmp/paths.json)"
+          referrers_json="$(collect_api "repos/${GH_REPO}/traffic/popular/referrers" /tmp/referrers.json)"
+          repo_json="$(collect_api "repos/${GH_REPO}" /tmp/repo.json)"
+          pages_json="$(collect_api "repos/${GH_REPO}/pages" /tmp/pages.json)"
+          site_json="$(collect_url "$SITE_URL")"
+          csv_json="$(collect_url "${SITE_URL}downloads/refund-leakage-review.csv")"
+          template_json="$(collect_url "${SITE_URL}downloads/vendor-message-template.md")"
+          STAMP="$stamp" OUT="$out" VIEWS="$views_json" CLONES="$clones_json" PATHS="$paths_json" REFERRERS="$referrers_json" REPO_META="$repo_json" PAGES="$pages_json" SITE="$site_json" CSV="$csv_json" TEMPLATE="$template_json" python3 - <<'PY'
           import json, os
+          def loads(name):
+              return json.loads(os.environ[name])
           payload = {
               "repository": os.environ["GH_REPO"],
               "captured_at": os.environ["STAMP"],
-              "scope_note": "GitHub Traffic API covers repository views, clones, paths, and referrers. It does not measure GitHub Pages visitors or identify users.",
-              "views": json.load(open('/tmp/views.json')),
-              "clones": json.load(open('/tmp/clones.json')),
-              "popular_paths": json.load(open('/tmp/paths.json')),
-              "popular_referrers": json.load(open('/tmp/referrers.json')),
+              "scope_note": "GitHub Traffic API may be unavailable to the default workflow token. When unavailable, this snapshot records the API error and still checks public site/download availability.",
+              "traffic_views": loads("VIEWS"),
+              "traffic_clones": loads("CLONES"),
+              "traffic_popular_paths": loads("PATHS"),
+              "traffic_popular_referrers": loads("REFERRERS"),
+              "repository_metadata": loads("REPO_META"),
+              "pages": loads("PAGES"),
+              "site": loads("SITE"),
+              "download_csv": loads("CSV"),
+              "download_template": loads("TEMPLATE"),
           }
           out = os.environ["OUT"]
-          with open(out, 'w', encoding='utf-8') as fh:
+          with open(out, "w", encoding="utf-8") as fh:
               json.dump(payload, fh, indent=2)
-              fh.write('\n')
-          latest = 'metrics/github-traffic/latest.json'
-          with open(latest, 'w', encoding='utf-8') as fh:
+              fh.write("\n")
+          latest = "metrics/repository-signals/latest.json"
+          with open(latest, "w", encoding="utf-8") as fh:
               json.dump(payload, fh, indent=2)
-              fh.write('\n')
+              fh.write("\n")
           PY
       - name: Commit snapshot if changed
         run: |
           set -euo pipefail
-          if git diff --quiet -- metrics/github-traffic; then
-            echo "No traffic snapshot changes to commit."
+          if git diff --quiet -- metrics/repository-signals; then
+            echo "No signal snapshot changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add metrics/github-traffic
-          git commit -m "chore: update repository traffic snapshot"
+          git add metrics/repository-signals
+          git commit -m "chore: update repository signal snapshot"
           git push

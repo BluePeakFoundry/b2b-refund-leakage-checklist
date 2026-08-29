@@ -21,9 +21,9 @@ Do not share confidential data, personal data, client names, vendor names, invoi
 - `downloads/refund-leakage-review.csv` — a plain CSV review sheet for internal checks.
 - `downloads/vendor-message-template.md` — a neutral vendor billing correction message template.
 
-## Repository traffic snapshots
+## Repository signal snapshots
 
-The workflow `.github/workflows/traffic-snapshot.yml` can be run manually or on its daily schedule to store repository-level GitHub Traffic API snapshots under `metrics/github-traffic/`. These snapshots do not measure GitHub Pages visitors and do not identify users.
+The workflow `.github/workflows/traffic-snapshot.yml` can be run manually or on its daily schedule to store repository-level signal snapshots under `metrics/repository-signals/`. It records GitHub Traffic API results when the workflow token can access them, records the API limitation when it cannot, and checks public availability of the page and downloadable helpers. These snapshots do not identify users.
 
 ## Validation
 
