@@ -21,12 +21,12 @@
     },
     {
       "path": "index.html",
-      "bytes": 9158,
-      "sha256": "c62cf8ee19731358b12160833e62eecab43b79d14212b17f8862cbb459d9be61"
+      "bytes": 9304,
+      "sha256": "d96a4ab727afd1e16c3abad3732ec02cb92c0f6c9be4a4a15ffffbe486030b4d"
     },
     {
       "path": "manifest.json",
-      "bytes": 2656,
+      "bytes": 2700,
       "sha256": "self-referential-skipped-by-validator"
     },
     {
@@ -81,5 +81,6 @@
     }
   ],
   "updated_at": "2026-08-29T17:38:44Z",
-  "updated_utc": "2026-08-29T18:01:46Z"
+  "updated_utc": "2026-08-30T18:37:52Z",
+  "search_console_verification": "google-site-verification meta tag added to index.html"
 }
