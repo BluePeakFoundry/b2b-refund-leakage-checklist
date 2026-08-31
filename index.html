@@ -125,7 +125,21 @@
       <ul>
         <li><a href="downloads/refund-leakage-review.csv" data-analytics-event="download:b2b:csv-review-sheet-inline" data-analytics-title="B2B inline CSV download">CSV review sheet</a> for tracking issue categories, evidence to check, and public-sharing limits.</li>
         <li><a href="downloads/vendor-message-template.md" data-analytics-event="download:b2b:vendor-template" data-analytics-title="B2B vendor template download">Vendor message template</a> for a concise billing correction request after internal verification.</li>
+        <li><a href="downloads/ap-duplicate-invoice-checks.sql" data-analytics-event="download:b2b:ap-sql-checks" data-analytics-title="B2B AP duplicate invoice SQL checks download">AP duplicate invoice SQL starter checks</a> for creating a private review queue from an authorized accounts-payable export.</li>
+        <li><a href="downloads/ap-sql-starter-guide.md" data-analytics-event="download:b2b:ap-sql-guide" data-analytics-title="B2B AP SQL starter guide download">AP SQL starter guide</a> with safe-use notes, expected columns, and manual review steps.</li>
       </ul>
+    </section>
+
+    <section class="downloads" aria-labelledby="sql-title">
+      <p class="tag">Accounts payable SQL starter</p>
+      <h2 id="sql-title">Find review candidates before sharing anything externally</h2>
+      <p>The SQL starter pack is designed for private, authorized AP exports. It flags duplicate invoice numbers, same-day same-amount repeats, and credit or cancellation signals that deserve manual review.</p>
+      <ul>
+        <li>Run it only in your own private database or local analytics workspace.</li>
+        <li>Use the result as a review queue, not as proof of overbilling or refund entitlement.</li>
+        <li>Do not post supplier names, invoice numbers, account IDs, bank details, personal data, pricing terms, or contract text in public requests.</li>
+      </ul>
+      <p><a class="button secondary" href="downloads/ap-duplicate-invoice-checks.sql" data-analytics-event="download:b2b:ap-sql-checks" data-analytics-title="B2B AP SQL starter pack section download">Download AP SQL checks</a></p>
     </section>
 
     <section class="request" aria-labelledby="request-title">

@@ -12,22 +12,22 @@
     "no_server_submission",
     "public_issue_templates_only"
   ],
-  "demand_action_goal": "Maintain a public, crawlable, cost-zero landing page with safe feedback, downloadable review helpers, a sanitized public review-request CTA, and repository-level GitHub Traffic snapshots.",
+  "demand_action_goal": "Maintain a public, crawlable, cost-zero landing page with safe feedback, downloadable review helpers, AP duplicate-invoice SQL starter checks, a sanitized public review-request CTA, and repository-level GitHub Traffic snapshots.",
   "public_review_request_cta": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=review-request.yml",
   "files": [
     {
       "path": "README.md",
-      "bytes": 2116,
-      "sha256": "eb59665242f81bc7689d6a66a37984e6bfeb7248caae567dc7e49bf5dd7cb5ce"
+      "bytes": 2431,
+      "sha256": "c236bb0ebeb43ce4b2f4fab69d4dc4f60661cb017851a90cd783e645670ec187"
     },
     {
       "path": "index.html",
-      "bytes": 10663,
-      "sha256": "47b1e31a3883cce615a78bc7de56f361af6a12e60b7d231aa46d20b4157ad141"
+      "bytes": 12259,
+      "sha256": "85bbf4e658ca194dfe63bcc5558f775089605fb7f7bedbd77b4d49f1b9a70936"
     },
     {
       "path": "manifest.json",
-      "bytes": 3077,
+      "bytes": 3178,
       "sha256": "self-referential-skipped-by-validator"
     },
     {
@@ -52,8 +52,8 @@
     },
     {
       "path": "validate_public_site.py",
-      "bytes": 9041,
-      "sha256": "058e4315d7bfa143db496ce1685a596b5717606be43e5cd542ea78c549a01f90"
+      "bytes": 9940,
+      "sha256": "d59193f82d169df6dc5f11b6e3cb044d87dffd30b43aa7a5db5f1278fe0bbd14"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feedback.yml",
@@ -81,12 +81,22 @@
       "sha256": "c2b9a60664393961ed4cb6678fd2239c17f604aabad1f1e89aa3aed1b4eb6d6e"
     },
     {
+      "path": "downloads/ap-duplicate-invoice-checks.sql",
+      "bytes": 3049,
+      "sha256": "64bee8dc12a1b0db6e4ab8537b53558d164f71e0a36918424ce16241b9a4f3fb"
+    },
+    {
+      "path": "downloads/ap-sql-starter-guide.md",
+      "bytes": 2013,
+      "sha256": "30270fedeb04c78ea5418b2220213cb048021ecc542813f6d950ef23c24b2140"
+    },
+    {
       "path": "analytics.js",
       "bytes": 1115,
       "sha256": "5d70b146cf7cccb7fe0060ff70c72b6a80429efff2b8d7dd135af3c1c3dcfc39"
     }
   ],
   "updated_at": "2026-08-29T17:38:44Z",
-  "updated_utc": "2026-08-31T00:49:03Z",
+  "updated_utc": "2026-08-31T07:03:14Z",
   "search_console_verification": "google-site-verification meta tag added to index.html"
 }

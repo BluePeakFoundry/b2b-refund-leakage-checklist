@@ -22,6 +22,8 @@ Do not share confidential data, personal data, client names, vendor names, invoi
 
 - `downloads/refund-leakage-review.csv` — a plain CSV review sheet for internal checks.
 - `downloads/vendor-message-template.md` — a neutral vendor billing correction message template.
+- `downloads/ap-duplicate-invoice-checks.sql` — starter SQL for flagging duplicate invoice, same-day same-amount, and credit/cancellation review candidates inside a private AP export.
+- `downloads/ap-sql-starter-guide.md` — safe-use notes, expected columns, and manual review workflow for the SQL starter pack.
 
 ## Repository signal snapshots
 

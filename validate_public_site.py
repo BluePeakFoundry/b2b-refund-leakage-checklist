@@ -17,6 +17,8 @@ REQUIRED_LINKS = {
     "https://bluepeakfoundry.github.io/consumer-rights-tools/",
     "downloads/refund-leakage-review.csv",
     "downloads/vendor-message-template.md",
+    "downloads/ap-duplicate-invoice-checks.sql",
+    "downloads/ap-sql-starter-guide.md",
 }
 PROHIBITED_TERMS = [
     r"\bsergi\b",
@@ -179,7 +181,9 @@ def validate_review_request_template():
 def validate_downloads():
     csv_path = ROOT / "downloads" / "refund-leakage-review.csv"
     template_path = ROOT / "downloads" / "vendor-message-template.md"
-    if not csv_path.exists() or not template_path.exists():
+    sql_path = ROOT / "downloads" / "ap-duplicate-invoice-checks.sql"
+    guide_path = ROOT / "downloads" / "ap-sql-starter-guide.md"
+    if not csv_path.exists() or not template_path.exists() or not sql_path.exists() or not guide_path.exists():
         fail("missing downloadable helper files")
     csv_text = csv_path.read_text(encoding="utf-8")
     if "avoid_sharing_publicly" not in csv_text or "invoice numbers" not in csv_text:
@@ -189,6 +193,14 @@ def validate_downloads():
     missing = [phrase for phrase in required if phrase not in template_text]
     if missing:
         fail(f"vendor template missing phrases: {missing}")
+    sql_text = sql_path.read_text(encoding="utf-8")
+    guide_text = guide_path.read_text(encoding="utf-8")
+    for phrase in ["Do not upload or paste live bank details", "review_query", "duplicate invoice"]:
+        if phrase.lower() not in sql_text.lower():
+            fail(f"SQL starter missing phrase: {phrase}")
+    for phrase in ["Do not use live bank details", "review lead", "No refund, saving, recovery"]:
+        if phrase.lower() not in guide_text.lower():
+            fail(f"SQL guide missing phrase: {phrase}")
 
 
 def validate_manifest():
@@ -214,6 +226,8 @@ def validate_manifest():
         "analytics.js",
         "downloads/refund-leakage-review.csv",
         "downloads/vendor-message-template.md",
+        "downloads/ap-duplicate-invoice-checks.sql",
+        "downloads/ap-sql-starter-guide.md",
     }
     if not required.issubset(files):
         fail(f"manifest missing files: {sorted(required - set(files))}")
