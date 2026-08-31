@@ -38,7 +38,8 @@
         "@type": "FAQPage",
         "mainEntity": [
           {"@type": "Question", "name": "Does this page collect invoice data?", "acceptedAnswer": {"@type": "Answer", "text": "No. The page is static and does not include forms, cookies, or server submission of your entries; usage is measured only in aggregate."}},
-          {"@type": "Question", "name": "Is this legal or accounting advice?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is a checklist for organizing an internal review. Always verify obligations and rights with official documents or qualified professionals."}}
+          {"@type": "Question", "name": "Is this legal or accounting advice?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is a checklist for organizing an internal review. Always verify obligations and rights with official documents or qualified professionals."}},
+          {"@type": "Question", "name": "Can I request a public checklist review?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the request is generalized and contains no confidential data, personal data, vendor names, invoice numbers, account identifiers, or contract text."}}
         ]
       }
     ]
@@ -56,7 +57,7 @@
     <div class="hero-actions" aria-label="Primary actions">
       <a class="button" href="#checklist" data-analytics-event="cta:b2b:use-checklist" data-analytics-title="B2B use checklist CTA">Use the checklist</a>
       <a class="button secondary" href="downloads/refund-leakage-review.csv" data-analytics-event="download:b2b:csv-review-sheet" data-analytics-title="B2B CSV review sheet download">Download CSV review sheet</a>
-      <a class="button secondary" href="https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=feedback.yml" data-analytics-event="lead:b2b:public-feedback" data-analytics-title="B2B public feedback lead">Share public feedback</a>
+      <a class="button secondary" href="https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=review-request.yml" data-analytics-event="lead" data-analytics-title="B2B public review request lead">Request a public checklist review</a>
     </div>
   </header>
 
@@ -125,6 +126,18 @@
         <li><a href="downloads/refund-leakage-review.csv" data-analytics-event="download:b2b:csv-review-sheet-inline" data-analytics-title="B2B inline CSV download">CSV review sheet</a> for tracking issue categories, evidence to check, and public-sharing limits.</li>
         <li><a href="downloads/vendor-message-template.md" data-analytics-event="download:b2b:vendor-template" data-analytics-title="B2B vendor template download">Vendor message template</a> for a concise billing correction request after internal verification.</li>
       </ul>
+    </section>
+
+    <section class="request" aria-labelledby="request-title">
+      <p class="tag">Public review request</p>
+      <h2 id="request-title">Ask for a checklist sanity check without sharing private records</h2>
+      <p>If your team has a generalized vendor-billing workflow and wants to know whether the checklist covers it, open a public review request. Keep the request sanitized: describe the process, not the supplier, account, invoice, contract, or person behind it.</p>
+      <ul>
+        <li>Good: “annual software renewals with unused seats and cancellation confirmations”.</li>
+        <li>Do not include company names, vendor names, invoice numbers, account IDs, personal data, pricing terms, or contract text.</li>
+        <li>No refund, saving, recovery, response time, or outcome is guaranteed.</li>
+      </ul>
+      <p><a class="button" href="https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=review-request.yml" data-analytics-event="lead" data-analytics-title="B2B inline public review request lead">Open a sanitized public review request</a></p>
     </section>
 
     <section class="limits" aria-labelledby="limits-title">

@@ -8,25 +8,26 @@
   "privacy_model": [
     "static_site",
     "no_forms",
-    "no_analytics",
-    "no_tracking",
-    "no_server_submission"
+    "cookie_free_aggregate_analytics",
+    "no_server_submission",
+    "public_issue_templates_only"
   ],
-  "demand_action_goal": "Maintain a public, crawlable, cost-zero landing page with safe feedback, downloadable review helpers, and repository-level GitHub Traffic snapshots.",
+  "demand_action_goal": "Maintain a public, crawlable, cost-zero landing page with safe feedback, downloadable review helpers, a sanitized public review-request CTA, and repository-level GitHub Traffic snapshots.",
+  "public_review_request_cta": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=review-request.yml",
   "files": [
     {
       "path": "README.md",
-      "bytes": 1880,
-      "sha256": "9a79fbd158bc7f0f0d31201ebfabedf6204ca13d63dd59541f7f505d7a363c82"
+      "bytes": 2116,
+      "sha256": "eb59665242f81bc7689d6a66a37984e6bfeb7248caae567dc7e49bf5dd7cb5ce"
     },
     {
       "path": "index.html",
-      "bytes": 9253,
-      "sha256": "cf4e895d175d7c0af31eadfd3b7aa74d2222b9af199ea3084686093d8332f700"
+      "bytes": 10663,
+      "sha256": "47b1e31a3883cce615a78bc7de56f361af6a12e60b7d231aa46d20b4157ad141"
     },
     {
       "path": "manifest.json",
-      "bytes": 2790,
+      "bytes": 3077,
       "sha256": "self-referential-skipped-by-validator"
     },
     {
@@ -46,18 +47,23 @@
     },
     {
       "path": "style.css",
-      "bytes": 2417,
-      "sha256": "577a64aa4265f8f952ff337eb88e8a77b9ce65c12880b8141e1819b56536a69d"
+      "bytes": 2437,
+      "sha256": "4319fa430043d4977636a84f4a0ac6a15ecaec7d0e3858c7526f49fba2d62be1"
     },
     {
       "path": "validate_public_site.py",
-      "bytes": 7832,
-      "sha256": "6025a4de67602f452c6d24e0a7d504f5283faa0a021f25efbc866da1853cdba5"
+      "bytes": 9041,
+      "sha256": "058e4315d7bfa143db496ce1685a596b5717606be43e5cd542ea78c549a01f90"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feedback.yml",
       "bytes": 1411,
       "sha256": "7b5383c5a64cd1219da121a67b01f72e94d1d61ccda7382d7cc41efa976d4ced"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/review-request.yml",
+      "bytes": 1668,
+      "sha256": "58e442bb37a55815939d7a7a66a7e65984e5f6dfa8db41204eedd6238b05f82c"
     },
     {
       "path": ".github/workflows/traffic-snapshot.yml",
@@ -76,11 +82,11 @@
     },
     {
       "path": "analytics.js",
-      "sha256": "5d70b146cf7cccb7fe0060ff70c72b6a80429efff2b8d7dd135af3c1c3dcfc39",
-      "bytes": 1115
+      "bytes": 1115,
+      "sha256": "5d70b146cf7cccb7fe0060ff70c72b6a80429efff2b8d7dd135af3c1c3dcfc39"
     }
   ],
   "updated_at": "2026-08-29T17:38:44Z",
-  "updated_utc": "2026-08-30T18:41:20Z",
+  "updated_utc": "2026-08-31T00:49:03Z",
   "search_console_verification": "google-site-verification meta tag added to index.html"
 }

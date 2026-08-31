@@ -1,0 +1,35 @@
+name: Sanitized checklist review request
+description: Ask whether the public checklist covers a generalized B2B billing review workflow.
+title: "Review request: "
+labels:
+  - review-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this only for generalized workflow review. No confidential data. No personal data. No client names. No vendor names. No invoice numbers. No account numbers. No account IDs. No pricing terms. No contract terms. No contract text.
+
+        No guaranteed response. No guaranteed refund, saving, recovery, or outcome. Do not ask for legal, accounting, tax, or financial advice.
+  - type: textarea
+    id: workflow
+    attributes:
+      label: General workflow to sanity-check
+      description: Describe the type of review, not a real supplier, account, invoice, contract, or person.
+      placeholder: "Example: annual software renewals with unused seats and a cancellation confirmation trail."
+    validations:
+      required: true
+  - type: textarea
+    id: checklist_gap
+    attributes:
+      label: What should the checklist cover?
+      description: Explain which step or decision point seems missing or unclear.
+      placeholder: "Example: whether to compare renewal dates against cancellation notice dates before drafting a vendor message."
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-safety confirmation
+      options:
+        - label: I have not included confidential data, personal data, client names, vendor names, invoice numbers, account numbers, account IDs, pricing terms, contract terms, or contract text.
+          required: true

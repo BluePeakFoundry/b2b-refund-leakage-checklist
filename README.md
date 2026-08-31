@@ -10,11 +10,13 @@ The page helps finance and operations teams organize an internal review of dupli
 
 This site is static. It does not include data-entry forms, cookies, account requirements, or server submission of entries. Privacy-friendly aggregate analytics measure visits and non-personal CTA/download/feedback events.
 
-## Public feedback
+## Public feedback and review requests
 
 General workflow feedback is welcome through the public GitHub issue template: https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=feedback.yml
 
-Do not share confidential data, personal data, client names, vendor names, invoice numbers, account IDs, or contract text.
+Sanitized public checklist review requests are welcome through: https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=review-request.yml
+
+Do not share confidential data, personal data, client names, vendor names, invoice numbers, account numbers, account IDs, pricing terms, contract terms, or contract text.
 
 ## Downloadable helpers
 
