@@ -93,7 +93,7 @@ def validate_html():
         fail("remote runtime resource detected")
     if FORM_OR_TRACKING_RE.search(text):
         fail("forbidden form or invasive tracking marker detected")
-    for marker in ["bluepeakfoundry.goatcounter.com/count", "analytics.js", "data-analytics-event", "data-analytics-event=\"lead\""]:
+    for marker in ["bluepeakfoundry.goatcounter.com/count", "analytics.js", "data-analytics-event", "data-analytics-event=\"lead\"", "lead:b2b:service-scope", "Request a sanitized service scope"]:
         if marker not in text:
             fail(f"missing analytics marker: {marker}")
     parser = Parser()
@@ -117,6 +117,8 @@ def validate_html():
         fail(f"missing JSON-LD types: {types}")
     if "No refund, saving, recovery, or outcome is guaranteed." not in text:
         fail("missing outcome disclaimer")
+    if "bank details" not in text or "tax details" not in text or "live files" not in text:
+        fail("missing service-scope safety language")
 
 
 def validate_robots_sitemap():
@@ -207,8 +209,9 @@ def validate_manifest():
     data = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
     if data.get("money_verified_eur") != 0:
         fail("manifest money_verified_eur must be 0")
-    if data.get("external_actions_performed") != []:
-        fail("manifest external_actions_performed must be empty before publish")
+    actions = data.get("external_actions_performed")
+    if not isinstance(actions, list) or not any(action.get("type") == "service_scope_cta" for action in actions if isinstance(action, dict)):
+        fail("manifest missing service_scope_cta external action")
     if data.get("public_url") != CANONICAL:
         fail("manifest public_url mismatch")
     files = {entry["path"]: entry for entry in data.get("files", [])}

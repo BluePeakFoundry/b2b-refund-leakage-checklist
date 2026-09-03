@@ -6,6 +6,8 @@ A static, private-by-design checklist for reviewing common B2B billing and refun
 
 The page helps finance and operations teams organize an internal review of duplicate charges, unused credits, renewal mismatches, and seat or downgrade gaps. It does not collect records, submit forms, provide legal or accounting advice, or guarantee any recovery.
 
+The live page also includes a sanitized service-scope CTA for teams that want a lightweight review plan before sharing any records. Scope requests must stay public and generalized; the repository does not accept confidential data, vendor details, invoice data, account identifiers, pricing terms, tax details, contract text, or live files.
+
 ## Privacy
 
 This site is static. It does not include data-entry forms, cookies, account requirements, or server submission of entries. Privacy-friendly aggregate analytics measure visits and non-personal CTA/download/feedback events.
@@ -17,6 +19,8 @@ General workflow feedback is welcome through the public GitHub issue template: h
 Sanitized public checklist review requests are welcome through: https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=review-request.yml
 
 Do not share confidential data, personal data, client names, vendor names, invoice numbers, account numbers, account IDs, pricing terms, contract terms, or contract text.
+
+The `lead:b2b:service-scope` CTA measures interest in a fixed-scope review outline without collecting private records.
 
 ## Downloadable helpers
 

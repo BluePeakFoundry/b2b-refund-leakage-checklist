@@ -4,7 +4,15 @@
   "repository": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist",
   "created_at": "2026-08-28T00:25:38Z",
   "money_verified_eur": 0,
-  "external_actions_performed": [],
+  "external_actions_performed": [
+    {
+      "type": "service_scope_cta",
+      "performed_at": "2026-09-03T15:46:42Z",
+      "description": "Published a sanitized fixed-scope review CTA for B2B refund leakage review planning.",
+      "analytics_event": "lead:b2b:service-scope",
+      "url": "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/#service-scope"
+    }
+  ],
   "privacy_model": [
     "static_site",
     "no_forms",
@@ -12,22 +20,23 @@
     "no_server_submission",
     "public_issue_templates_only"
   ],
-  "demand_action_goal": "Maintain a public, crawlable, cost-zero landing page with safe feedback, downloadable review helpers, AP duplicate-invoice SQL starter checks, a sanitized public review-request CTA, and repository-level GitHub Traffic snapshots.",
+  "demand_action_goal": "Maintain a public, crawlable, cost-zero landing page with safe feedback, downloadable review helpers, AP duplicate-invoice SQL starter checks, a sanitized public review-request CTA, a sanitized fixed-scope review CTA, and repository-level GitHub Traffic snapshots.",
   "public_review_request_cta": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=review-request.yml",
+  "service_scope_cta": "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/#service-scope",
   "files": [
     {
       "path": "README.md",
-      "bytes": 2431,
-      "sha256": "c236bb0ebeb43ce4b2f4fab69d4dc4f60661cb017851a90cd783e645670ec187"
+      "bytes": 2892,
+      "sha256": "4a6bff94294b0b334dbb48cff243451f90e0ec4b8a04cc305a60424d470e3fc2"
     },
     {
       "path": "index.html",
-      "bytes": 12259,
-      "sha256": "85bbf4e658ca194dfe63bcc5558f775089605fb7f7bedbd77b4d49f1b9a70936"
+      "bytes": 13783,
+      "sha256": "3ece0b27d1b242667f50237042c83966f79b2d9c75c2f8d24324ad047a3a323d"
     },
     {
       "path": "manifest.json",
-      "bytes": 3178,
+      "bytes": 0,
       "sha256": "self-referential-skipped-by-validator"
     },
     {
@@ -47,13 +56,13 @@
     },
     {
       "path": "style.css",
-      "bytes": 2437,
-      "sha256": "4319fa430043d4977636a84f4a0ac6a15ecaec7d0e3858c7526f49fba2d62be1"
+      "bytes": 2538,
+      "sha256": "f8b59295c29b853569ce3af265521dec9396293d3ed56eff11c1d09803b70e9f"
     },
     {
       "path": "validate_public_site.py",
-      "bytes": 9940,
-      "sha256": "d59193f82d169df6dc5f11b6e3cb044d87dffd30b43aa7a5db5f1278fe0bbd14"
+      "bytes": 10277,
+      "sha256": "5a3c2757f6b5c339881d03cb5df4a5c61b1fec65daa9d4be4d029219c5d03514"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feedback.yml",
@@ -96,7 +105,7 @@
       "sha256": "5d70b146cf7cccb7fe0060ff70c72b6a80429efff2b8d7dd135af3c1c3dcfc39"
     }
   ],
-  "updated_at": "2026-08-29T17:38:44Z",
-  "updated_utc": "2026-08-31T07:03:14Z",
+  "updated_at": "2026-09-03T15:46:42Z",
+  "updated_utc": "2026-09-03T15:46:42Z",
   "search_console_verification": "google-site-verification meta tag added to index.html"
 }
