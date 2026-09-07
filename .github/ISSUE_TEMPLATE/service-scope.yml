@@ -1,0 +1,49 @@
+name: Sanitized service-scope request
+description: Request a public, fixed-scope B2B refund leakage review outline without sharing records.
+title: "Service scope request: "
+labels:
+  - service-scope
+  - review-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this only to request a generalized review outline. No confidential data. No personal data. No client names. No vendor names. No invoice numbers. No account numbers. No account IDs. No pricing terms. No tax details. No contract terms. No contract text. No bank details. No live files.
+
+        No guaranteed response. No guaranteed refund, saving, recovery, engagement, or outcome. This is not legal, accounting, tax, or financial advice.
+  - type: dropdown
+    id: workflow_area
+    attributes:
+      label: Workflow area
+      description: Choose the generalized workflow area you want the scope outline to cover.
+      options:
+        - Duplicate invoice or same-day same-amount checks
+        - Unused credits or credit memo follow-up
+        - Renewal, cancellation, or downgrade mismatch
+        - Seat-count, usage, or entitlement review
+        - General vendor-billing review workflow
+    validations:
+      required: true
+  - type: textarea
+    id: generalized_context
+    attributes:
+      label: Generalized context
+      description: Describe the workflow pattern only. Do not include names, records, account identifiers, pricing, tax details, or contract text.
+      placeholder: "Example: quarterly review of software renewals where inactive seats and cancellation confirmations are checked before contacting vendors."
+    validations:
+      required: true
+  - type: textarea
+    id: desired_output
+    attributes:
+      label: What should the scope outline include?
+      description: Request the type of review plan, evidence categories, safety limits, or handoff checklist you need.
+      placeholder: "Example: a short review plan, evidence categories to verify internally, and a safe vendor-message checklist."
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-safety confirmation
+      options:
+        - label: I have not included confidential data, personal data, client names, vendor names, invoice numbers, account numbers, account IDs, pricing terms, tax details, contract terms, contract text, bank details, or live files.
+          required: true

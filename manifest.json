@@ -11,28 +11,36 @@
       "description": "Published a sanitized fixed-scope review CTA for B2B refund leakage review planning.",
       "analytics_event": "lead:b2b:service-scope",
       "url": "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/#service-scope"
+    },
+    {
+      "type": "dedicated_service_scope_issue_template",
+      "performed_at": "2026-09-07T18:21:42Z",
+      "description": "Published a dedicated sanitized service-scope GitHub issue template and wired the public CTA to it.",
+      "analytics_event": "lead:b2b:service-scope-public",
+      "url": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=service-scope.yml"
     }
   ],
   "privacy_model": [
-    "static_site",
-    "no_forms",
     "cookie_free_aggregate_analytics",
+    "dedicated_sanitized_issue_template",
+    "no_forms",
     "no_server_submission",
-    "public_issue_templates_only"
+    "public_issue_templates_only",
+    "static_site"
   ],
-  "demand_action_goal": "Maintain a public, crawlable, cost-zero landing page with safe feedback, downloadable review helpers, AP duplicate-invoice SQL starter checks, a sanitized public review-request CTA, a sanitized fixed-scope review CTA, and repository-level GitHub Traffic snapshots.",
+  "demand_action_goal": "Maintain a public, crawlable, cost-zero landing page with safe feedback, downloadable review helpers, AP duplicate-invoice SQL starter checks, a sanitized public review-request CTA, a dedicated sanitized fixed-scope review CTA, and repository-level GitHub Traffic snapshots.",
   "public_review_request_cta": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=review-request.yml",
-  "service_scope_cta": "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/#service-scope",
+  "service_scope_cta": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=service-scope.yml",
   "files": [
     {
       "path": "README.md",
-      "bytes": 2892,
-      "sha256": "4a6bff94294b0b334dbb48cff243451f90e0ec4b8a04cc305a60424d470e3fc2"
+      "bytes": 3135,
+      "sha256": "932eae03ec60996cbfb6b7cc546a0e894d4433fb4e47e8f52cf03be4f2d2a766"
     },
     {
       "path": "index.html",
-      "bytes": 13783,
-      "sha256": "3ece0b27d1b242667f50237042c83966f79b2d9c75c2f8d24324ad047a3a323d"
+      "bytes": 13706,
+      "sha256": "f6773756c885f7e373de96cf340610ecf10e8e1d9c62c146f8e5754676d32e72"
     },
     {
       "path": "manifest.json",
@@ -61,8 +69,8 @@
     },
     {
       "path": "validate_public_site.py",
-      "bytes": 10277,
-      "sha256": "5a3c2757f6b5c339881d03cb5df4a5c61b1fec65daa9d4be4d029219c5d03514"
+      "bytes": 11613,
+      "sha256": "7397250326c02df6fc5a66527f75658d4f15025de5220ddb87b86b6d01a6b0ef"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feedback.yml",
@@ -75,9 +83,19 @@
       "sha256": "58e442bb37a55815939d7a7a66a7e65984e5f6dfa8db41204eedd6238b05f82c"
     },
     {
+      "path": ".github/ISSUE_TEMPLATE/service-scope.yml",
+      "bytes": 2421,
+      "sha256": "db6f5e1d7f678a59f2e4c1cd14c421ce47d8d48baf86f66760564e249746d754"
+    },
+    {
       "path": ".github/workflows/traffic-snapshot.yml",
       "bytes": 4964,
       "sha256": "ba40d4ef0f11b8910bb6310a2e7b7bce0119b55801ee290140d542cbb1a34d50"
+    },
+    {
+      "path": "analytics.js",
+      "bytes": 1115,
+      "sha256": "5d70b146cf7cccb7fe0060ff70c72b6a80429efff2b8d7dd135af3c1c3dcfc39"
     },
     {
       "path": "downloads/refund-leakage-review.csv",
@@ -98,14 +116,9 @@
       "path": "downloads/ap-sql-starter-guide.md",
       "bytes": 2013,
       "sha256": "30270fedeb04c78ea5418b2220213cb048021ecc542813f6d950ef23c24b2140"
-    },
-    {
-      "path": "analytics.js",
-      "bytes": 1115,
-      "sha256": "5d70b146cf7cccb7fe0060ff70c72b6a80429efff2b8d7dd135af3c1c3dcfc39"
     }
   ],
-  "updated_at": "2026-09-03T15:46:42Z",
-  "updated_utc": "2026-09-03T15:46:42Z",
+  "updated_at": "2026-09-07T18:21:42Z",
+  "updated_utc": "2026-09-07T18:21:42Z",
   "search_console_verification": "google-site-verification meta tag added to index.html"
 }

@@ -18,9 +18,11 @@ General workflow feedback is welcome through the public GitHub issue template: h
 
 Sanitized public checklist review requests are welcome through: https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=review-request.yml
 
+Sanitized fixed-scope review outline requests are welcome through the dedicated service-scope template: https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=service-scope.yml
+
 Do not share confidential data, personal data, client names, vendor names, invoice numbers, account numbers, account IDs, pricing terms, contract terms, or contract text.
 
-The `lead:b2b:service-scope` CTA measures interest in a fixed-scope review outline without collecting private records.
+The `lead:b2b:service-scope` and `lead:b2b:service-scope-public` CTAs measure interest in a fixed-scope review outline without collecting private records.
 
 ## Downloadable helpers
 
@@ -45,5 +47,5 @@ python3 -m json.tool manifest.json >/dev/null
 Expected local result after building the manifest:
 
 ```text
-OK b2b refund leakage checklist files=12 money_verified_eur=0 external_actions=0
+OK b2b refund leakage checklist files=16 money_verified_eur=0 external_actions=2
 ```

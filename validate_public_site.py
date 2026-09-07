@@ -11,9 +11,11 @@ ROOT = Path(__file__).resolve().parent
 CANONICAL = "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/"
 FEEDBACK_URL = "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=feedback.yml"
 REVIEW_REQUEST_URL = "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=review-request.yml"
+SERVICE_SCOPE_URL = "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=service-scope.yml"
 REQUIRED_LINKS = {
     FEEDBACK_URL,
     REVIEW_REQUEST_URL,
+    SERVICE_SCOPE_URL,
     "https://bluepeakfoundry.github.io/consumer-rights-tools/",
     "downloads/refund-leakage-review.csv",
     "downloads/vendor-message-template.md",
@@ -93,7 +95,7 @@ def validate_html():
         fail("remote runtime resource detected")
     if FORM_OR_TRACKING_RE.search(text):
         fail("forbidden form or invasive tracking marker detected")
-    for marker in ["bluepeakfoundry.goatcounter.com/count", "analytics.js", "data-analytics-event", "data-analytics-event=\"lead\"", "lead:b2b:service-scope", "Request a sanitized service scope"]:
+    for marker in ["bluepeakfoundry.goatcounter.com/count", "analytics.js", "data-analytics-event", "data-analytics-event=\"lead\"", "lead:b2b:service-scope", "lead:b2b:service-scope-public", "Request a sanitized service scope"]:
         if marker not in text:
             fail(f"missing analytics marker: {marker}")
     parser = Parser()
@@ -180,6 +182,37 @@ def validate_review_request_template():
         fail("review request template must not add external contact links")
 
 
+def validate_service_scope_template():
+    path = ROOT / ".github" / "ISSUE_TEMPLATE" / "service-scope.yml"
+    if not path.exists():
+        fail("missing service scope issue template")
+    text = path.read_text(encoding="utf-8")
+    required_phrases = [
+        "No confidential data",
+        "No personal data",
+        "No client names",
+        "No vendor names",
+        "No invoice numbers",
+        "No account numbers",
+        "No account IDs",
+        "No pricing terms",
+        "No tax details",
+        "No contract terms",
+        "No contract text",
+        "No bank details",
+        "No live files",
+        "No guaranteed response",
+        "No guaranteed refund",
+        "not legal, accounting, tax, or financial advice",
+    ]
+    lowered = text.lower()
+    missing = [phrase for phrase in required_phrases if phrase.lower() not in lowered]
+    if missing:
+        fail(f"service scope template missing safety phrases: {missing}")
+    if "contact_links" in lowered:
+        fail("service scope template must not add external contact links")
+
+
 def validate_downloads():
     csv_path = ROOT / "downloads" / "refund-leakage-review.csv"
     template_path = ROOT / "downloads" / "vendor-message-template.md"
@@ -225,6 +258,7 @@ def validate_manifest():
         "manifest.json",
         ".github/ISSUE_TEMPLATE/feedback.yml",
         ".github/ISSUE_TEMPLATE/review-request.yml",
+        ".github/ISSUE_TEMPLATE/service-scope.yml",
         ".github/workflows/traffic-snapshot.yml",
         "analytics.js",
         "downloads/refund-leakage-review.csv",
@@ -245,6 +279,7 @@ def main():
     validate_robots_sitemap()
     validate_feedback_template()
     validate_review_request_template()
+    validate_service_scope_template()
     validate_downloads()
     validate_manifest()
     data = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
