@@ -31,6 +31,11 @@ The `lead:b2b:service-scope` and `lead:b2b:service-scope-public` CTAs measure in
 - `downloads/ap-duplicate-invoice-checks.sql` — starter SQL for flagging duplicate invoice, same-day same-amount, and credit/cancellation review candidates inside a private AP export.
 - `downloads/ap-sql-starter-guide.md` — safe-use notes, expected columns, and manual review workflow for the SQL starter pack.
 
+The versioned release kit bundles those four helpers for teams that prefer one download:
+https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/releases/download/v0.1.0-b2b-review-kit/b2b-refund-leakage-review-kit-v0.1.0.zip
+
+The `download:b2b:toolkit-release-zip` CTA measures interest in the release kit without collecting private records.
+
 ## Repository signal snapshots
 
 The workflow `.github/workflows/traffic-snapshot.yml` can be run manually or on its daily schedule to store repository-level signal snapshots under `metrics/repository-signals/`. It records GitHub Traffic API results when the workflow token can access them, records the API limitation when it cannot, and checks public availability of the page and downloadable helpers. These snapshots do not identify users.

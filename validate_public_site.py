@@ -12,10 +12,12 @@ CANONICAL = "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/"
 FEEDBACK_URL = "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=feedback.yml"
 REVIEW_REQUEST_URL = "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=review-request.yml"
 SERVICE_SCOPE_URL = "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=service-scope.yml"
+RELEASE_KIT_URL = "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/releases/download/v0.1.0-b2b-review-kit/b2b-refund-leakage-review-kit-v0.1.0.zip"
 REQUIRED_LINKS = {
     FEEDBACK_URL,
     REVIEW_REQUEST_URL,
     SERVICE_SCOPE_URL,
+    RELEASE_KIT_URL,
     "https://bluepeakfoundry.github.io/consumer-rights-tools/",
     "downloads/refund-leakage-review.csv",
     "downloads/vendor-message-template.md",
@@ -95,7 +97,7 @@ def validate_html():
         fail("remote runtime resource detected")
     if FORM_OR_TRACKING_RE.search(text):
         fail("forbidden form or invasive tracking marker detected")
-    for marker in ["bluepeakfoundry.goatcounter.com/count", "analytics.js", "data-analytics-event", "data-analytics-event=\"lead\"", "lead:b2b:service-scope", "lead:b2b:service-scope-public", "Request a sanitized service scope"]:
+    for marker in ["bluepeakfoundry.goatcounter.com/count", "analytics.js", "data-analytics-event", "data-analytics-event=\"lead\"", "lead:b2b:service-scope", "lead:b2b:service-scope-public", "download:b2b:toolkit-release-zip", "Request a sanitized service scope"]:
         if marker not in text:
             fail(f"missing analytics marker: {marker}")
     parser = Parser()

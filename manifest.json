@@ -18,6 +18,13 @@
       "description": "Published a dedicated sanitized service-scope GitHub issue template and wired the public CTA to it.",
       "analytics_event": "lead:b2b:service-scope-public",
       "url": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=service-scope.yml"
+    },
+    {
+      "type": "versioned_release_kit",
+      "performed_at": "2026-09-09T01:29:55Z",
+      "description": "Published a versioned ZIP release kit bundling the public B2B refund leakage review helpers.",
+      "analytics_event": "download:b2b:toolkit-release-zip",
+      "url": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/releases/download/v0.1.0-b2b-review-kit/b2b-refund-leakage-review-kit-v0.1.0.zip"
     }
   ],
   "privacy_model": [
@@ -26,21 +33,24 @@
     "no_forms",
     "no_server_submission",
     "public_issue_templates_only",
-    "static_site"
+    "static_site",
+    "plain_text_release_assets"
   ],
-  "demand_action_goal": "Maintain a public, crawlable, cost-zero landing page with safe feedback, downloadable review helpers, AP duplicate-invoice SQL starter checks, a sanitized public review-request CTA, a dedicated sanitized fixed-scope review CTA, and repository-level GitHub Traffic snapshots.",
+  "demand_action_goal": "Maintain a public, crawlable, cost-zero landing page with safe feedback, downloadable review helpers, a versioned review-kit release download, AP duplicate-invoice SQL starter checks, a sanitized public review-request CTA, a dedicated sanitized fixed-scope review CTA, and repository-level GitHub Traffic snapshots.",
   "public_review_request_cta": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=review-request.yml",
   "service_scope_cta": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/issues/new?template=service-scope.yml",
+  "release_kit_cta": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist/releases/download/v0.1.0-b2b-review-kit/b2b-refund-leakage-review-kit-v0.1.0.zip",
+  "release_kit_analytics_event": "download:b2b:toolkit-release-zip",
   "files": [
     {
       "path": "README.md",
-      "bytes": 3135,
-      "sha256": "932eae03ec60996cbfb6b7cc546a0e894d4433fb4e47e8f52cf03be4f2d2a766"
+      "bytes": 3487,
+      "sha256": "56948ed685a8ec84e24ca54a0619231d8e174e346e683f6fc942d003c487b7b9"
     },
     {
       "path": "index.html",
-      "bytes": 13706,
-      "sha256": "f6773756c885f7e373de96cf340610ecf10e8e1d9c62c146f8e5754676d32e72"
+      "bytes": 14285,
+      "sha256": "25700a3296887cc0aa294f126a98355325c4f3b41fc34e451fefa602b39070e9"
     },
     {
       "path": "manifest.json",
@@ -69,8 +79,8 @@
     },
     {
       "path": "validate_public_site.py",
-      "bytes": 11613,
-      "sha256": "7397250326c02df6fc5a66527f75658d4f15025de5220ddb87b86b6d01a6b0ef"
+      "bytes": 11835,
+      "sha256": "5f5fb4cc6181d7bc78ef638bd06ef3b38c7b02cf8ea8ec5c1957210ddceec5b5"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feedback.yml",
@@ -118,7 +128,7 @@
       "sha256": "30270fedeb04c78ea5418b2220213cb048021ecc542813f6d950ef23c24b2140"
     }
   ],
-  "updated_at": "2026-09-07T18:21:42Z",
-  "updated_utc": "2026-09-07T18:21:42Z",
+  "updated_at": "2026-09-09T01:29:55Z",
+  "updated_utc": "2026-09-09T01:29:55Z",
   "search_console_verification": "google-site-verification meta tag added to index.html"
 }
