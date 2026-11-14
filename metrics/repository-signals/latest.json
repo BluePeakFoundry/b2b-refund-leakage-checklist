@@ -1,6 +1,6 @@
 {
   "repository": "BluePeakFoundry/b2b-refund-leakage-checklist",
-  "captured_at": "20261113T143101Z",
+  "captured_at": "20261114T132746Z",
   "scope_note": "GitHub Traffic API may be unavailable to the default workflow token. When unavailable, this snapshot records the API error and still checks public site/download availability.",
   "traffic_views": {
     "ok": false,
@@ -93,13 +93,13 @@
       "deployments_url": "https://api.github.com/repos/BluePeakFoundry/b2b-refund-leakage-checklist/deployments",
       "created_at": "2026-08-28T00:30:25Z",
       "updated_at": "2026-11-12T16:09:05Z",
-      "pushed_at": "2026-11-12T15:09:01Z",
+      "pushed_at": "2026-11-13T14:31:04Z",
       "git_url": "git://github.com/BluePeakFoundry/b2b-refund-leakage-checklist.git",
       "ssh_url": "git@github.com:BluePeakFoundry/b2b-refund-leakage-checklist.git",
       "clone_url": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist.git",
       "svn_url": "https://github.com/BluePeakFoundry/b2b-refund-leakage-checklist",
       "homepage": "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/",
-      "size": 181,
+      "size": 184,
       "stargazers_count": 0,
       "watchers_count": 0,
       "language": "HTML",
@@ -168,7 +168,7 @@
     "ok": true,
     "data": {
       "url": "https://api.github.com/repos/BluePeakFoundry/b2b-refund-leakage-checklist/pages",
-      "status": "built",
+      "status": "building",
       "cname": null,
       "custom_404": false,
       "html_url": "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/",
